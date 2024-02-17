@@ -82,9 +82,9 @@
     }
     function AddContact(fullName, contactNumber, emailAddress){
         let contact = new core.Contact(fullName, contactNumber, emailAddress);
-        if(contact.serialized()){
+        if(contact.serialize()){
             let key = contact.fullName.substring(0,1) + Date.now();
-            localStorage.setItem(key, contact.serialized());
+            localStorage.setItem(key, contact.serialize());
         }
     }
     function DisplayHomePage(){
@@ -212,7 +212,7 @@
                     contact.contactNumber = $("#contactNumber").val();
                     contact.emailAddress = $("#emailAddress").val();
 
-                    localStorage.setItem(page, contact.serialized());
+                    localStorage.setItem(page, contact.serialize());
                     location.href = "contact-list.html";
                 });
 
