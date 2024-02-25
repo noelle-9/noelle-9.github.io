@@ -117,7 +117,8 @@
         // password
         ValidateField("#password",
                   /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
-                     "Please enter a valid password")
+                     "Please enter a valid password, password must contain 1 uppercase letter" +
+            ", 1 lowercase letter, 1 digit, 1 special character and must be 8 characters or more.")
     }
 
     /**
@@ -250,7 +251,7 @@
 
         var map = L.map('map').setView([43.9396879079, -78.8914931007], 15);
 
-        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        L.tileLayer('https://a.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(map);
@@ -279,7 +280,10 @@
                 document.getElementById('modalMessage').textContent = `Message: ${ContactMessage}`;
 
                 // clears the text fields
-                ContactForm.reset();
+                $("#fullName").val('');
+                $("#emailAddress").val('');
+                $("#subject").val('');
+                $("#message").val('');
 
                 // Show the modal
                 $('#ContactModal').modal("show")
@@ -291,7 +295,7 @@
 
         $("#cancelButton").on("click", function (event){
             $("#fullName").val('');
-            $("#lastName").val('');
+            $("#emailAddress").val('');
             $("#subject").val('');
             $("#message").val('');
         });
