@@ -5,13 +5,13 @@
       "DisplayName" : "Bilbo Baggins",
       "EmailAddress" : "bilbobaggin@example.com",
       "Username" : "bbaggins",
-      "Password" : "12345"
+      "Password" : "password"
     },
     {
       "DisplayName" : "Leon Kennedy",
       "EmailAddress" : "lkenn@example.com",
       "Username" : "leon",
-      "Password" : "12345"
+      "Password" : "password"
     },
     {
       "DisplayName" : "Admin",
